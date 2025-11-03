@@ -41,7 +41,7 @@ jobs:
         run: mvn test
         env:
           # Передаем параметры подключения к базе данных в переменные окружения
-          SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/mvc_hibernate?useSSL=false
+          SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mvc_hibernate?useSSL=false
           SPRING_DATASOURCE_USERNAME: root
           SPRING_DATASOURCE_PASSWORD: Vad310865!
 
