@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::layout(~{::section})}">
+<head>
+  <meta charset="UTF-8">
+  <title>Список пользователей</title>
+</head>
+<body>
+<section class="rowindus">
+  <div class="container mt-5">
+	  <h2>Список пользователей</h2>
+	  <div th:each="el:${users}" class="alert alert-info">
+		  <p th:text="${el.name}"></p>
+		  <p th:text="${el.balanse}"></p>
+	  </div>
+      <a th:href="@{'/useradd'}" class="btn btn-success btn-sm">Добавить пользователя</a>
+  </div>
+</section>
+</body>
+</html>
