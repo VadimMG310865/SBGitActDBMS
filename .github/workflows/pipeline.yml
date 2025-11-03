@@ -10,14 +10,14 @@ jobs:
     services:
       # Запускаем MySQL как сервис, который будет доступен для тестов
       mysql:
-        image: mysql:8.0
+        image: postgres:15-alpine
         env:
-          MYSQL_ROOT_PASSWORD: Vad310865!
-          MYSQL_DATABASE: mvc_hibernate
+          POSTGRES_PASSWORD: Vad310865!
+          POSTGRES_DB: mvc_hibernate
         ports:
-          - 3306:3306
+          - 5432:5432
         options: >-
-          --health-cmd "mysqladmin ping"
+          --health-cmd "pg_isready -U postgres -d mvc_hibernate"
           --health-interval "10s"
           --health-timeout "5s"
           --health-retries 3
@@ -41,8 +41,8 @@ jobs:
         run: mvn test
         env:
           # Передаем параметры подключения к базе данных в переменные окружения
-          SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/mvc_hibernate?useSSL=false&allowPublicKeyRetrieval=true
-          SPRING_DATASOURCE_USERNAME: root
+          SPRING_DATASOURCE_URL: jdbc:postgresql://127.0.0.1:5432/mvc_hibernate
+          SPRING_DATASOURCE_USERNAME: postgres
           SPRING_DATASOURCE_PASSWORD: Vad310865!
 
 
