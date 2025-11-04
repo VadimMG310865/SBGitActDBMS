@@ -37,22 +37,22 @@ class UserServiceTest {
         assertEquals(userName, savedUser.getName());
         assertEquals(balance, savedUser.getBalanse());
     }
-//
-//    @Test
-//    void testSaveUserObject() {
-//        // Arrange
-//        Users user = new Users("User2", 500);
-//
-//        // Act
-//        Users savedUser = userService.saveUser(user);
-//
-//        // Assert
-//        assertNotNull(savedUser);
-//        assertNotNull(savedUser.getId());
-//        assertEquals("User2", savedUser.getName());
-//        assertEquals(500, savedUser.getBalanse());
-//    }
-//
+
+    @Test
+    void testSaveUserObject() {
+        // Arrange
+        Users user = new Users("User2", 500);
+
+        // Act
+        Users savedUser = userService.saveUser(user);
+
+        // Assert
+        assertNotNull(savedUser);
+        assertNotNull(savedUser.getId());
+        assertEquals("User2", savedUser.getName());
+        assertEquals(500, savedUser.getBalanse());
+    }
+
 //    @Test
 //    void testGetUserById() {
 //        // Arrange
